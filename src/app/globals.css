@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'Cormorant Garamond', 'Cinzel', 'Rozha One', 'Noto Serif Devanagari', Georgia, serif;
+  --font-display: 'Cinzel', 'Rozha One', 'Noto Serif Devanagari', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-hindi: 'Noto Serif Devanagari', 'Rozha One', serif;
+
+  /* Palette Tokens */
+  --forest-black: #060e0a;
+  --forest-deep: #091711;
+  --forest-dark: #0f281e;
+  --forest-card: #133327;
+  --forest-border: rgba(45, 90, 68, 0.4);
+  
+  --ivory-light: #fbf9f4;
+  --ivory-warm: #f5efe3;
+  --ivory-sand: #eae0cf;
+  --ivory-border: rgba(180, 160, 130, 0.35);
+
+  --saffron-terracotta: #c76738;
+  --saffron-vibrant: #db7444;
+  --gold-antique: #c8a356;
+  --gold-light: #e5c77e;
+
+  --text-dark: #1b2420;
+  --text-dark-muted: #4e5b55;
+  --text-light: #f7f4ed;
+  --text-light-muted: #a3b3ab;
+}
+
+/* Custom Typography Classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-display-luxury {
+  font-family: var(--font-display);
+}
+
+.font-hindi-heading {
+  font-family: var(--font-hindi);
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans);
+}
+
+/* Smooth Scrolling & Base Setup */
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+  background-color: var(--ivory-light);
+  color: var(--text-dark);
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Gold Gradient Shimmer */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f6d385 0%, #d4af37 50%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.saffron-gradient-text {
+  background: linear-gradient(135deg, #e88656 0%, #c76738 60%, #9e461f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ivory-gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, #f4ede1 80%, #d8caa7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Atmospheric Glow */
+.glow-saffron {
+  box-shadow: 0 0 45px -5px rgba(219, 116, 68, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px -5px rgba(200, 163, 86, 0.25);
+}
+
+.glow-forest {
+  box-shadow: 0 20px 60px -15px rgba(9, 23, 17, 0.7);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #091711;
+}
+::-webkit-scrollbar-thumb {
+  background: #274b3c;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c76738;
+}
+
+/* Pulse Wave Animation */
+@keyframes pulse-travel {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.pulse-line-anim {
+  stroke-dasharray: 600;
+  animation: pulse-travel 3.5s ease-in-out infinite;
+}
+
+/* Slow Breathe */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+.animate-breathe {
+  animation: breathe 8s ease-in-out infinite;
+}
+
+/* Floating Elements */
+@keyframes soft-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: soft-float 6s ease-in-out infinite;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
