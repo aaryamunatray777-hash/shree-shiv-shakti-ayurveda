@@ -91,6 +91,11 @@ export default function LeadForm() {
       if (res.ok && data.success) {
         setSubmitted(true);
         setLeadId(data.leadId || null);
+
+        // Fire Meta standard Lead event ONLY on verified successful submission
+        if (typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead");
+        }
       } else {
         if (data.errors) {
           setErrors(data.errors);

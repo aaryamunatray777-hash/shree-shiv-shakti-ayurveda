@@ -13,6 +13,7 @@ export interface LeadSubmissionResponse {
   message: string;
   leadId?: string;
   metaStatus?: "PROCESSED" | "META_INTEGRATION_PENDING" | "FAILED";
+  sheetStatus?: "STORED" | "NOT_CONFIGURED" | "FAILED";
   errors?: Record<string, string>;
 }
 
@@ -57,3 +58,9 @@ export const LUCKNOW_AREAS = [
   "Chowk / Old Lucknow",
   "Other (अन्य क्षेत्र)"
 ] as const;
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
