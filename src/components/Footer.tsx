@@ -116,6 +116,14 @@ export default function Footer() {
                   स्वास्थ्य परामर्श क्षेत्र
                 </button>
               </li>
+              <li className="pt-1 border-t border-[#183627]">
+                <a
+                  href="/meta-ads"
+                  className="text-[#E5C77E] hover:text-white transition-colors flex items-center space-x-1"
+                >
+                  <span>✨ Meta Ad Creatives & Studio</span>
+                </a>
+              </li>
             </ul>
           </div>
 
